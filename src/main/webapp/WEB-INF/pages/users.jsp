@@ -54,7 +54,7 @@
 
 <h1>User List</h1>
 
-<c:if test="${!empty listBooks}">
+<c:if test="${!empty listUsers}">
     <table class="tg">
         <tr>
             <th width="80">ID</th>
@@ -64,10 +64,10 @@
             <th width="60">Edit</th>
             <th width="60">Delete</th>
         </tr>
-        <c:forEach items="${listBooks}" var="user">
+        <c:forEach items="${listUsers}" var="user">
             <tr>
                 <td>${user.id}</td>
-                <td><a href="/bookdata/${user.id}" target="_blank">${user.name}</a></td>
+                <td><a href="/userdata/${user.id}" target="_blank">${user.name}</a></td>
                 <td>${user.age}</td>
                 <td>${user.isAdmin}</td>
                 <td><a href="<c:url value='/edit/${user.id}'/>">Edit</a></td>
@@ -80,11 +80,11 @@
 
 <h1>Add User</h1>
 
-<c:url var="addAction" value="/books/add"/>
+<c:url var="addAction" value="/users/add"/>
 
-<form:form action="${addAction}" commandName="book">
+<form:form action="${addAction}" commandName="user">
     <table>
-        <c:if test="${!empty book.name}">
+        <c:if test="${!empty user.name}">
             <tr>
                 <td>
                     <form:label path="id">
@@ -129,11 +129,11 @@
         </tr>
         <tr>
             <td colspan="2">
-                <c:if test="${!empty book.name}">
+                <c:if test="${!empty user.name}">
                     <input type="submit"
                            value="<spring:message text="Edit User"/>"/>
                 </c:if>
-                <c:if test="${empty book.name}">
+                <c:if test="${empty user.name}">
                     <input type="submit"
                            value="<spring:message text="Add User"/>"/>
                 </c:if>

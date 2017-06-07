@@ -6,7 +6,7 @@
 
 <html>
 <head>
-    <title>BookData</title>
+    <title>UserData</title>
 
     <style type="text/css">
         .tg {
@@ -49,20 +49,20 @@
 
 </head>
 <body>
-<h1>Book Details</h1>
+<h1>User Details</h1>
 
 <table class="tg">
     <tr>
         <th width="80">ID</th>
-        <th width="120">Title</th>
-        <th width="120">Author</th>
-        <th width="120">Price</th>
+        <th width="120">Name</th>
+        <th width="80">Age</th>
+        <th width="120">Is Admin</th>
     </tr>
     <tr>
-        <td>${book.id}</td>
-        <td>${book.bookTitle}</td>
-        <td>${book.bookAuthor}</td>
-        <td>${book.price/100}${book.price%100}</td>
+        <td>${user.id}</td>
+        <td>${user.name}</td>
+        <td>${user.age}</td>
+        <td>${user.isAdmin}</td>
     </tr>
 </table>
 </body>

@@ -1,10 +1,10 @@
-package net.galiev.bookmanager.model;
+package net.galiev.crud.model;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
-public class Book {
+public class User {
 
     @Id
     @Column(name = "id")
@@ -54,7 +54,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +

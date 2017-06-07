@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="net.galiev.bookmanager"/>
+    <context:component-scan base-package="net.galiev.crud"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
@@ -29,7 +29,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value> net.galiev.bookmanager.model.Book </value>
+                <value>net.galiev.crud.model.User</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -41,13 +41,13 @@
         </property>
     </bean>
 
-    <!--BookDao and BookService beans-->
-    <bean id="bookDao" class="net.galiev.bookmanager.dao.BookDaoImpl">
+    <!--UserDao and UserService beans-->
+    <bean id="userDao" class="net.galiev.crud.dao.UserDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="bookService" class="net.galiev.bookmanager.service.BookServiceImpl">
-        <property name="bookDao" ref="bookDao"/>
+    <bean id="userService" class="net.galiev.crud.service.UserServiceImpl">
+        <property name="userDao" ref="userDao"/>
     </bean>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
