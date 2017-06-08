@@ -1,6 +1,7 @@
 package net.galiev.crud.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "users")
@@ -19,6 +20,9 @@ public class User {
 
     @Column(name = "isAdmin")
     private Boolean isAdmin;
+
+    @Column(name = "createdDate")
+    private Date createdDate;
 
     public int getId() {
         return id;
@@ -50,6 +54,14 @@ public class User {
 
     public void setIsAdmin(Boolean isAdmin) {
         this.isAdmin = isAdmin;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
     @Override
